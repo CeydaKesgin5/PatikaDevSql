@@ -1,0 +1,51 @@
+CREATE TABLE author(
+--<column_name> <data_type> <constraint>
+  id SERIAL PRIMARY KEY,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  email VARCHAR(100),
+  birthday DATE
+);
+
+INSERT INTO author(first_name,last_name,email,birthday)
+VALUES
+  ('Haruki', 'Murakami','Haruki@gmail.com','1948-11-07')
+  ('Sabahattin', 'Ali','Sabahattin@gmail.com','1914-07-11')
+
+CREATE TABLE author2 (LIKE author); --sadece yapı olarak benzetme
+
+INSERT INTO author2
+SELECT *FROM author
+WHERE first_name='Sabahattin';//veri kopyalama
+
+CREATE TABLE author3 AS SELECT* FROM author; //veriyle beraber yeni tablo oluşturmak
+
+DROP TABLE athor3;//tablo silme
+IF EXIST //hata mesajı vermez
+
+UPDATE author
+SET first_name ='Emrah Safa',
+    last_naem='Gürkan',
+    email='emrah@gmail.com',
+    birthday='1980-01-01'
+WHERE id=10;
+
+DELETE FROM author
+WHERE id=6
+RETURNING *;//uygulanan işlemi gösteriyor
+
+
+CREATE TABLE employee 
+id SERIAL PROMARY KEY,
+name VARCHAR(50),
+email VARCHAR(100),
+birthday DATE
+);
+
+
+
+
+
+
+
+
