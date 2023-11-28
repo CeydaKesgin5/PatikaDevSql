@@ -59,6 +59,12 @@ SET NOT NULL;
 ALTER TABLE users
 ADD UNIQUE(email);--email sütunu benzersiz verilerden oluşacak.
 
+--CHECK kısıtlaması ile uyguladığımız sütundaki verilere belirli koşullar verebiliriz.
+ALTER TABLE users
+ADD CHECK (age>18); 
+
+--tablo oluştururken istenilen sütun yanında unique ve check kullanılabilir
+
 
 
 
