@@ -49,6 +49,15 @@ CREATE TABLE book(
   page_number INTEGER NOT NULL,
   author_id INTEGER REFERENCES author(id)
 );
+--ALTER
+ALTER anahtar kelimesini varolan bir tabloda değişiklik yapmak için kullanılır.
+ALTER TABLE <tablo_adı> ALTER COLUMN <sütun_adı>
+SET NOT NULL;
+
+--UNIQUE kısıtlaması ile uyguladığımız sütundaki verilerin birbirlerinden farklı benzersiz olmalarını isteriz. 
+--PRIMARY KEY kısıtlaması kendiliğinden UNIQUE kısıtlamasına sahiptir.
+ALTER TABLE users
+ADD UNIQUE(email);--email sütunu benzersiz verilerden oluşacak.
 
 
 
