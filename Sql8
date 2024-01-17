@@ -25,7 +25,7 @@ IF EXIST //hata mesajı vermez
 
 UPDATE author
 SET first_name ='Emrah Safa',
-    last_naem='Gürkan',
+    last_name='Gürkan',
     email='emrah@gmail.com',
     birthday='1980-01-01'
 WHERE id=10;
